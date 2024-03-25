@@ -1,0 +1,5 @@
+D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\GALAGA_USFX_LAB01\Definitions.GALAGA_USFX_LAB01.h
+D:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01/NaveEnemiga.h
+D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemiga.generated.h

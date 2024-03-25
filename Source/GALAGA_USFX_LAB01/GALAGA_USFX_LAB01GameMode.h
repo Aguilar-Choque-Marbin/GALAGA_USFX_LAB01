@@ -13,6 +13,9 @@ class AGALAGA_USFX_LAB01GameMode : public AGameModeBase
 
 public:
 	AGALAGA_USFX_LAB01GameMode();
+protected:
+	virtual void BeginPlay() override;
+	
 };
 
 
