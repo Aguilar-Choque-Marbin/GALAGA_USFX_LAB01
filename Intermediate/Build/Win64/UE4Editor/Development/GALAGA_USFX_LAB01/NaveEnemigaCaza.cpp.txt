@@ -3,3 +3,5 @@ D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemigaCaza.h
 D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemiga.h
 D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemiga.generated.h
 D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemigaCaza.generated.h
+D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\GALAGA_USFX_LAB01Projectile.h
+D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\GALAGA_USFX_LAB01Projectile.generated.h
