@@ -36,7 +36,7 @@ public: \
 
 #define GALAGA_USFX_LAB01_Source_GALAGA_USFX_LAB01_NaveEnemigaReabastecimiento_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigaReabastecimiento(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ANaveEnemigaReabastecimiento(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANaveEnemigaReabastecimiento) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ANaveEnemigaReabastecimiento); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigaReabastecimiento); \
@@ -48,8 +48,6 @@ public:
 
 
 #define GALAGA_USFX_LAB01_Source_GALAGA_USFX_LAB01_NaveEnemigaReabastecimiento_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigaReabastecimiento() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ANaveEnemigaReabastecimiento(ANaveEnemigaReabastecimiento&&); \

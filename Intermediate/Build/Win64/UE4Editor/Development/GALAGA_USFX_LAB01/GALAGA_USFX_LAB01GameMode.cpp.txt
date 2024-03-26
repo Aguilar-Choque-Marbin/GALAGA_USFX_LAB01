@@ -21,3 +21,7 @@ D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemigaEspia.h
 D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemigaEspia.generated.h
 D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemigaNodriza.h
 D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemigaNodriza.generated.h
+D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemigaReabastecimiento.h
+D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemigaReabastecimiento.generated.h
+D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\NaveEnemigaTransporte.h
+D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\NaveEnemigaTransporte.generated.h
