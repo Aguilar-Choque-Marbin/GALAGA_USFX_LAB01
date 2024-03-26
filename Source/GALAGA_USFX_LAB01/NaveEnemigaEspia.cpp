@@ -35,6 +35,8 @@ void ANaveEnemigaEspia::Dispare()
 	FVector DireccionDisparoEspia = RotacionActualNaveEnemigaEspia.Vector();
 	PosicionActualNaveEnemigaEspia += DireccionDisparoEspia * 100;
 	UWorld* const World = GetWorld();
-	World->SpawnActor<AGALAGA_USFX_LAB01Projectile>(PosicionActualNaveEnemigaEspia, RotacionActualNaveEnemigaEspia);
-
+	if (World != nullptr)
+	{
+		World->SpawnActor<AGALAGA_USFX_LAB01Projectile>(PosicionActualNaveEnemigaEspia, RotacionActualNaveEnemigaEspia);
+	}
 }

@@ -13,5 +13,7 @@ UCLASS()
 class GALAGA_USFX_LAB01_API ANaveEnemigaNodriza : public ANaveEnemiga
 {
 	GENERATED_BODY()
+public:
+	ANaveEnemigaNodriza();
 	
 };

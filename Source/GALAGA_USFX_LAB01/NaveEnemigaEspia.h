@@ -14,8 +14,8 @@ class GALAGA_USFX_LAB01_API ANaveEnemigaEspia : public ANaveEnemiga
 {
 	GENERATED_BODY()
 private:
-	int TiempoDeDisparo;
-	int Intervalo;
+	float TiempoDeDisparo;
+	float Intervalo;
 public:
 	ANaveEnemigaEspia();
 public:
