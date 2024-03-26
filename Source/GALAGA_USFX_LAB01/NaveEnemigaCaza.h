@@ -15,8 +15,8 @@ class GALAGA_USFX_LAB01_API ANaveEnemigaCaza : public ANaveEnemiga
 	GENERATED_BODY()
 private:
 	int cantidadBombas;
-	float TimeSinceLastShot;
-	float ShotInterval;
+	float TiempoDeDisparo;
+	float Intervalo;
 public:
 	ANaveEnemigaCaza();
 	FORCEINLINE int GetCantidadBombas() const { return cantidadBombas; }

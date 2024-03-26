@@ -13,5 +13,13 @@ UCLASS()
 class GALAGA_USFX_LAB01_API ANaveEnemigaEspia : public ANaveEnemiga
 {
 	GENERATED_BODY()
-	
+private:
+	int TiempoDeDisparo;
+	int Intervalo;
+public:
+	ANaveEnemigaEspia();
+public:
+	virtual void Dispare();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

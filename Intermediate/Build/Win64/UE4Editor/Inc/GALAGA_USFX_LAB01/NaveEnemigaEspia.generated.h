@@ -36,7 +36,7 @@ public: \
 
 #define GALAGA_USFX_LAB01_Source_GALAGA_USFX_LAB01_NaveEnemigaEspia_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigaEspia(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ANaveEnemigaEspia(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANaveEnemigaEspia) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ANaveEnemigaEspia); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigaEspia); \
@@ -48,8 +48,6 @@ public:
 
 
 #define GALAGA_USFX_LAB01_Source_GALAGA_USFX_LAB01_NaveEnemigaEspia_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigaEspia() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ANaveEnemigaEspia(ANaveEnemigaEspia&&); \
