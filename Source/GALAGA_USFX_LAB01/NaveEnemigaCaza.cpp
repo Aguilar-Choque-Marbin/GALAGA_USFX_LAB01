@@ -11,9 +11,25 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	TiempoDeDisparo = 0.0f; // Inicializa el tiempo desde el último disparo
 	Intervalo = 1.0f; // Intervalo de tiempo entre disparos
 }
+void ANaveEnemigaCaza::Mover(float DeltaTime)
+{
+	recorrido = 0.0f;
+	FVector PosicionInicial = GetActorLocation();
+	FVector PosicionActual = GetActorLocation();
+	float NuevaX = DeltaTime * velocidad;
+	PosicionActual = FVector(PosicionActual.X + NuevaX, PosicionActual.Y, PosicionActual.Z);
+	SetActorLocation(PosicionActual);
+	recorrido += FMath::Abs(NuevaX);
+	if (recorrido >= 2.0f)
+	{
+		SetActorLocation(PosicionInicial);
+		recorrido = 0.0f;
+	}
+}
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Mover(DeltaTime);
 	// Incrementar el tiempo transcurrido desde el último disparo
 	TiempoDeDisparo += DeltaTime;
 
