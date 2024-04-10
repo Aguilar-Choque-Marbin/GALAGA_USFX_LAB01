@@ -17,6 +17,7 @@ const FName AGALAGA_USFX_LAB01Pawn::MoveForwardBinding("MoveForward");
 const FName AGALAGA_USFX_LAB01Pawn::MoveRightBinding("MoveRight");
 const FName AGALAGA_USFX_LAB01Pawn::FireForwardBinding("FireForward");
 const FName AGALAGA_USFX_LAB01Pawn::FireRightBinding("FireRight");
+const FName AGALAGA_USFX_LAB01Pawn::DobleDisparoBinding("DobleDisparo");
 //const FName AGALAGA_USFX_LAB01Pawn::ArribaDerechaBinding("ArribaDerecha");
 //const FName AGALAGA_USFX_LAB01Pawn::ArribaIzquierdaBinding("ArribaIzquierda");
 //const FName AGALAGA_USFX_LAB01Pawn::AbajoDerechaBinding("AbajoDerecha");
@@ -65,6 +66,7 @@ void AGALAGA_USFX_LAB01Pawn::SetupPlayerInputComponent(class UInputComponent* Pl
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
+	PlayerInputComponent->BindAxis(DobleDisparoBinding);
 	//PlayerInputComponent->BindAxis(ArribaDerechaBinding);
 	//PlayerInputComponent->BindAxis(ArribaIzquierdaBinding);
 	//PlayerInputComponent->BindAxis(AbajoDerechaBinding);
@@ -76,6 +78,7 @@ void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
 	// Find movement direction
 	const float ForwardValue = GetInputAxisValue(MoveForwardBinding);
 	const float RightValue = GetInputAxisValue(MoveRightBinding);
+	const float DobleDisparoValue = GetInputAxisValue(DobleDisparoBinding);
 	//const float ArribaDerechaValue = GetInputAxisValue(ArribaDerechaBinding);
 
 	// Clamp max size so that (X=1, Y=1) doesn't cause faster movement in diagonal directions
@@ -106,6 +109,10 @@ void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
 
 	// Try and fire a shot
 	FireShot(FireDirection);
+	if (DobleDisparoValue > 0.0f)
+	{
+		DobleDisparo();
+	}
 }
 
 void AGALAGA_USFX_LAB01Pawn::FireShot(FVector FireDirection)
@@ -146,3 +153,29 @@ void AGALAGA_USFX_LAB01Pawn::ShotTimerExpired()
 	bCanFire = true;
 }
 
+void AGALAGA_USFX_LAB01Pawn::DobleDisparo()
+{
+			const FRotator FireRotation = GetActorRotation();
+			// Spawn projectile at an offset from this pawn
+			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
+			//const FVector SpawnLocation2 = GetActorLocation() + FireRotation.RotateVector(GunOffset2);
+
+
+			UWorld* const World = GetWorld();
+			if (World != nullptr)
+			{
+				// spawn the projectile
+				World->SpawnActor<AGALAGA_USFX_LAB01Projectile>(SpawnLocation, FireRotation);
+
+			}
+
+			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGALAGA_USFX_LAB01Pawn::ShotTimerExpired, FireRate);
+
+
+			//try and play the sound if specified
+			if (FireSound != nullptr)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+			}
+
+}

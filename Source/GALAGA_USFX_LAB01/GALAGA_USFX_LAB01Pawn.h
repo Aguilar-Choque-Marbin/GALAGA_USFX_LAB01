@@ -49,6 +49,7 @@ public:
 
 	/* Fire a shot in the specified direction */
 	void FireShot(FVector FireDirection);
+	void DobleDisparo();
 
 	/* Handler for the fire timer expiry */
 	void ShotTimerExpired();
@@ -58,6 +59,7 @@ public:
 	static const FName MoveRightBinding;
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
+	static const FName DobleDisparoBinding;
 	//static const FName ArribaDerechaBinding;
 	//static const FName MoveArribaIzquierdaBinding;
 	//static const FName MoveAbajoDerechaBinding;
