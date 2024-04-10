@@ -17,6 +17,10 @@ const FName AGALAGA_USFX_LAB01Pawn::MoveForwardBinding("MoveForward");
 const FName AGALAGA_USFX_LAB01Pawn::MoveRightBinding("MoveRight");
 const FName AGALAGA_USFX_LAB01Pawn::FireForwardBinding("FireForward");
 const FName AGALAGA_USFX_LAB01Pawn::FireRightBinding("FireRight");
+//const FName AGALAGA_USFX_LAB01Pawn::ArribaDerechaBinding("ArribaDerecha");
+//const FName AGALAGA_USFX_LAB01Pawn::ArribaIzquierdaBinding("ArribaIzquierda");
+//const FName AGALAGA_USFX_LAB01Pawn::AbajoDerechaBinding("AbajoDerecha");
+//const FName AGALAGA_USFX_LAB01Pawn::AbajoIzquierdaBinding("AbajoIzquierda");
 
 AGALAGA_USFX_LAB01Pawn::AGALAGA_USFX_LAB01Pawn()
 {	
@@ -61,6 +65,10 @@ void AGALAGA_USFX_LAB01Pawn::SetupPlayerInputComponent(class UInputComponent* Pl
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
+	//PlayerInputComponent->BindAxis(ArribaDerechaBinding);
+	//PlayerInputComponent->BindAxis(ArribaIzquierdaBinding);
+	//PlayerInputComponent->BindAxis(AbajoDerechaBinding);
+	//PlayerInputComponent->BindAxis(AbajoIzquierdaBinding);
 }
 
 void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
@@ -68,6 +76,7 @@ void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
 	// Find movement direction
 	const float ForwardValue = GetInputAxisValue(MoveForwardBinding);
 	const float RightValue = GetInputAxisValue(MoveRightBinding);
+	//const float ArribaDerechaValue = GetInputAxisValue(ArribaDerechaBinding);
 
 	// Clamp max size so that (X=1, Y=1) doesn't cause faster movement in diagonal directions
 	const FVector MoveDirection = FVector(ForwardValue, RightValue, 0.f).GetClampedToMaxSize(1.0f);

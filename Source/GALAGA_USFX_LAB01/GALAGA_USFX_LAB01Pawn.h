@@ -58,6 +58,11 @@ public:
 	static const FName MoveRightBinding;
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
+	//static const FName ArribaDerechaBinding;
+	//static const FName MoveArribaIzquierdaBinding;
+	//static const FName MoveAbajoDerechaBinding;
+	//static const FName MoveAbajoIzquierdaBinding;
+
 
 private:
 

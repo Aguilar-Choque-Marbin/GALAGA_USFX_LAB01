@@ -10,21 +10,25 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 	TiempoDeDisparo = 0.0f; // Inicializa el tiempo desde el último disparo
 	Intervalo = 1.0f; // Intervalo de tiempo entre disparos
+	PosicionInicialX = -500.0f;
+	Limite = 0.0f;
+
 }
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
-	recorrido = 0.0f;
-	FVector PosicionInicial = GetActorLocation();
+
 	FVector PosicionActual = GetActorLocation();
+	
 	float NuevaX = DeltaTime * velocidad;
+
 	PosicionActual = FVector(PosicionActual.X + NuevaX, PosicionActual.Y, PosicionActual.Z);
-	SetActorLocation(PosicionActual);
-	recorrido += FMath::Abs(NuevaX);
-	if (recorrido >= 2.0f)
+	if (PosicionActual.X >= 0)
 	{
-		SetActorLocation(PosicionInicial);
-		recorrido = 0.0f;
+		PosicionActual.X=PosicionInicialX;
 	}
+	SetActorLocation(PosicionActual);
+
+	
 }
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
