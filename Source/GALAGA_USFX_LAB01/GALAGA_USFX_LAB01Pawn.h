@@ -50,6 +50,7 @@ public:
 	/* Fire a shot in the specified direction */
 	void FireShot(FVector FireDirection);
 	void DobleDisparo();
+	void DisparoParabolico();
 
 	/* Handler for the fire timer expiry */
 	void ShotTimerExpired();
@@ -60,11 +61,25 @@ public:
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
 	static const FName DobleDisparoBinding;
+	static const FName VolverInicioBinding;
+	static const FName DisparoParabolicoBinding;
+	static const FName SaltarBinding;
+	static const FName TeletransportacionBinding;
+	static const FName EscudoBinding;
+	static const FName DisparoBoomerangBinding;
+
+	//static const FName AbajoDerechaBinding;
 	//static const FName ArribaDerechaBinding;
 	//static const FName MoveArribaIzquierdaBinding;
 	//static const FName MoveAbajoDerechaBinding;
 	//static const FName MoveAbajoIzquierdaBinding;
-
+	FVector GunOffset2;
+	void VolverInicio();
+	FVector PosicionInicial;
+	void Saltar();
+	void Teletransportacion(float DeltaTime);
+	void Escudo();
+	void DisparoBoomerang();
 
 private:
 

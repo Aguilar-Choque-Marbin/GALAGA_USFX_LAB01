@@ -27,7 +27,7 @@ AGALAGA_USFX_LAB01Projectile::AGALAGA_USFX_LAB01Projectile()
 	ProjectileMovement->MaxSpeed = 1500.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
-	ProjectileMovement->ProjectileGravityScale = 0.f; // No gravity
+	ProjectileMovement->ProjectileGravityScale = 0.0f; // No gravity
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
