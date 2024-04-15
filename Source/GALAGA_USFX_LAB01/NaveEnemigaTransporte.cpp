@@ -8,6 +8,8 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
+	MovimientoNaves = CreateDefaultSubobject<UMovimientoNaves>(TEXT("MovimientoNaves"));
+	//MovimientoNaves->Velocidad = 200.0f;
 	TiempoDeDisparo=0.0f; // Inicializa el tiempo desde el último disparo
 	Intervalo=1.0f; // Intervalo de tiempo entre disparos
 }

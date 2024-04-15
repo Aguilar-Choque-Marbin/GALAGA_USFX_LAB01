@@ -4,14 +4,29 @@
 #include "NaveEnemigaCaza.h"
 #include "GALAGA_USFX_LAB01Projectile.h"
 
+
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
+	MovimientoNaves = CreateDefaultSubobject<UMovimientoNaves>(TEXT("MovimientoNaves"));
+	//MovimientoNaves->Velocidad = 100.0f;
+	//VisualMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualMesh"));
+	//RootComponent = VisualMesh;
+
+	// Crea y configura la malla de colisión
+	//CollisionMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CollisionMesh"));
+	//CollisionMesh->SetupAttachment(RootComponent);
+
+	// Configura la malla de colisión para que sea invisible en el juego
+	//CollisionMesh->SetVisibility(false);
+	//CollisionMesh->SetCollisionProfileName(TEXT("BlockAllDynamic"));
+
 	TiempoDeDisparo = 0.0f; // Inicializa el tiempo desde el último disparo
 	Intervalo = 1.0f; // Intervalo de tiempo entre disparos
 	PosicionInicialX = -500.0f;
 	Limite = 0.0f;
+
 
 }
 void ANaveEnemigaCaza::Mover(float DeltaTime)
@@ -33,7 +48,9 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//MovimientoNaves;
+	//Mover(DeltaTime);
+	
 	// Incrementar el tiempo transcurrido desde el último disparo
 	TiempoDeDisparo += DeltaTime;
 

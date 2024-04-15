@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "NaveEnemiga.h"
+#include "MovimientoNaves.h"
 #include "NaveEnemigaEspia.generated.h"
 
 /**
@@ -14,6 +15,7 @@ class GALAGA_USFX_LAB01_API ANaveEnemigaEspia : public ANaveEnemiga
 {
 	GENERATED_BODY()
 private:
+	UMovimientoNaves* MovimientoNaves;
 	float TiempoDeDisparo;
 	float Intervalo;
 public:

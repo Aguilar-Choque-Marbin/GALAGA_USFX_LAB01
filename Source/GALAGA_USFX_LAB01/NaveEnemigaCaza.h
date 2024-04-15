@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "NaveEnemiga.h"
+#include "MovimientoNaves.h"
 #include "NaveEnemigaCaza.generated.h"
+
+
 
 /**
  * 
@@ -13,6 +16,13 @@ UCLASS()
 class GALAGA_USFX_LAB01_API ANaveEnemigaCaza : public ANaveEnemiga
 {
 	GENERATED_BODY()
+private: 
+	//UPROPERTY (EditAnywhere, Category = "Nave Enemiga Caza")
+	//UStaticMeshComponent* VisualMesh;
+	//UPROPERTY(EditAnywhere, Category = "Nave Enemiga Caza")
+	//UStaticMeshComponent* CollisionMesh;
+	//UPROPERTY(VisibleAnywhere, Category = "Componentes")
+	UMovimientoNaves* MovimientoNaves;
 private:
 	int cantidadBombas;
 	float TiempoDeDisparo;

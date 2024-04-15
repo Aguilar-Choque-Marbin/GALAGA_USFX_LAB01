@@ -21,6 +21,7 @@ ANaveEnemiga::ANaveEnemiga()
 void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
 }
 

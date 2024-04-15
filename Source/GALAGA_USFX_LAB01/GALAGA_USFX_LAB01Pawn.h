@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/BoxComponent.h"
 #include "GALAGA_USFX_LAB01Pawn.generated.h"
 
 UCLASS(Blueprintable)
@@ -22,6 +23,10 @@ class AGALAGA_USFX_LAB01Pawn : public APawn
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+
+protected:
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Colision")
+	class UBoxComponent* CollisionComponent;
 
 public:
 	AGALAGA_USFX_LAB01Pawn();
@@ -76,15 +81,19 @@ public:
 	FVector GunOffset2;
 	void VolverInicio();
 	FVector PosicionInicial;
-	void Saltar();
+	void Saltar(float Deltatime);
+	float Gravedad;
+	float VelocidadVertical;
 	void Teletransportacion(float DeltaTime);
 	void Escudo();
 	void DisparoBoomerang();
-
+	void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnActorHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
 private:
 
 	/* Flag to control firing  */
 	uint32 bCanFire : 1;
+	uint32 bEstaEnSuelo : 1;
 
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
