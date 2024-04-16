@@ -10,6 +10,7 @@ UMovimientoNaves::UMovimientoNaves()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 	Velocidad = 200.0f;
+
 	// ...
 }
 
@@ -28,25 +29,39 @@ void UMovimientoNaves::BeginPlay()
 void UMovimientoNaves::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	
 	// ...
 	AActor* Mover = GetOwner();
 	if (Mover)
 	{
-		float LimiteMaximo = 900.0f;
-		float LimiteMinimo = -900.0f;
-		FVector PosicionActual = Mover->GetActorLocation();
-		auto NuevaPosicion = PosicionActual + FVector(0.0f, DeltaTime * Velocidad, 0.0f);
-		if (NuevaPosicion.Y >= LimiteMaximo)
+		static float tiempo = 0.0f;
+		tiempo += DeltaTime;
+		if (tiempo <= 20.0f)
 		{
-			Velocidad *= -1;
+			float LimiteMaximo = 900.0f;
+			float LimiteMinimo = -900.0f;
+			FVector PosicionActual = Mover->GetActorLocation();
+			auto NuevaPosicion = PosicionActual + FVector(0.0f, DeltaTime * Velocidad, 0.0f);
+			if (NuevaPosicion.Y >= LimiteMaximo)
+			{
+				Velocidad *= -1;
+			}
+			if (NuevaPosicion.Y <= LimiteMinimo)
+			{
+				Velocidad *= -1;
+			}
+			Mover->SetActorLocation(NuevaPosicion);
 		}
-		if (NuevaPosicion.Y <= LimiteMinimo)
+		else if (tiempo <=30.0f)
 		{
-			Velocidad *= -1;
+			FVector PosicionActual = Mover->GetActorLocation();
+			auto NuevaPosicion = PosicionActual + FVector(FMath::FRandRange(-1, 1)*5, FMath::FRandRange(-1, 1) *5, FMath::FRandRange(-1, 1) *1);
+			Mover->SetActorLocation(NuevaPosicion);
 		}
-		Mover->SetActorLocation(NuevaPosicion);
-
+		else
+		{
+			tiempo = 0.0f;
+		}
 	}
 }
 

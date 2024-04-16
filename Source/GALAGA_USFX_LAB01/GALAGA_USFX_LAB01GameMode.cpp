@@ -24,7 +24,7 @@ void AGALAGA_USFX_LAB01GameMode::BeginPlay()
 	FVector PosicionActualNaveEnemigaNodriza = FVector(0.0f, 0.0f, 250.0f);
 	FVector PosicionActualNaveEnemigaReabastecimiento = FVector(400.0f, 0.0f, 250.0f);
 	FVector PosicionActualNaveEnemigaTransporte = FVector(800.0f,0.0f, 250.0f);
-	FRotator RotacionCaza = FRotator(0.0f, 180.0f, 0.0f);
+	FRotator RotacionCaza = FRotator(60.0f, 160.0f, 0.0f);
 	FRotator RotacionEspia = FRotator(0.0f, 0.0f, 0.0f);
 	FRotator RotacionNodriza = FRotator(0.0f, 180.0f, 0.0f);
 	FRotator RotacionReabastecimiento = FRotator(0.0f, 0.0f, 0.0f);

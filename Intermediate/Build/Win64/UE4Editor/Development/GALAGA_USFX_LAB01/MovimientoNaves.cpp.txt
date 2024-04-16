@@ -1,3 +1,0 @@
-D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\GALAGA_USFX_LAB01\Definitions.GALAGA_USFX_LAB01.h
-D:\sis457\GALAGA_USFX_LAB01\Source\GALAGA_USFX_LAB01\MovimientoNaves.h
-D:\sis457\GALAGA_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_USFX_LAB01\MovimientoNaves.generated.h
