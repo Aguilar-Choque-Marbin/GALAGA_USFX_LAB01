@@ -113,7 +113,10 @@ void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
 	const float TeletransportacionValue = GetInputAxisValue(TeletransportacionBinding);
 	const float EscudoValue = GetInputAxisValue(EscudoBinding);
 	const float DisparoBoomerangValue = GetInputAxisValue(DisparoBoomerangBinding);
-	
+	FString MensajeVertical = FString::Printf(TEXT("Valor Vertical: %f"), ForwardValue);
+	FString MensajeHorizontal = FString::Printf(TEXT("Valor Horizontal: %f"), RightValue);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeVertical);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeHorizontal);
 
 	// Clamp max size so that (X=1, Y=1) doesn't cause faster movement in diagonal directions
 	const FVector MoveDirection = FVector(ForwardValue, RightValue, 0.f).GetClampedToMaxSize(1.0f);
@@ -141,10 +144,10 @@ void AGALAGA_USFX_LAB01Pawn::Tick(float DeltaSeconds)
 	const float FireRightValue = GetInputAxisValue(FireRightBinding);
 	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
 	FVector PosicionActual = GetActorLocation();
-	FString MensajeInicial = FString::Printf(TEXT("Posicion Inicial: X=%f, Y=%f, Z=%f"), PosicionInicial.X, PosicionInicial.Y, PosicionInicial.Z);
-	FString MensajeActual = FString::Printf(TEXT("Posicion Actual: X=%f, Y=%f, Z=%f"), PosicionActual.X, PosicionActual.Y, PosicionActual.Z);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeInicial);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeActual);
+	//FString MensajeInicial = FString::Printf(TEXT("Posicion Inicial: X=%f, Y=%f, Z=%f"), PosicionInicial.X, PosicionInicial.Y, PosicionInicial.Z);
+	//FString MensajeActual = FString::Printf(TEXT("Posicion Actual: X=%f, Y=%f, Z=%f"), PosicionActual.X, PosicionActual.Y, PosicionActual.Z);
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeInicial);
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, MensajeActual);
 	// Try and fire a shot
 	FireShot(FireDirection);
 	if (DobleDisparoValue > 0.0f)

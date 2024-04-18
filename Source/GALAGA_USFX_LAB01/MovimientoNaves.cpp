@@ -38,8 +38,8 @@ void UMovimientoNaves::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 		tiempo += DeltaTime;
 		if (tiempo <= 20.0f)
 		{
-			float LimiteMaximo = 900.0f;
-			float LimiteMinimo = -900.0f;
+			float LimiteMaximo = 100.0f;
+			float LimiteMinimo = -100.0f;
 			FVector PosicionActual = Mover->GetActorLocation();
 			auto NuevaPosicion = PosicionActual + FVector(0.0f, DeltaTime * Velocidad, 0.0f);
 			if (NuevaPosicion.Y >= LimiteMaximo)
